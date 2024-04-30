@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scientific Number Acceptor</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url(image.png);
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: lightgoldenrodyellow;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+p {
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #473e3e;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white; /* Warna teks menjadi putih */
+}
+
+.footer-content {
+  display: inline-block;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Scientific Number Acceptor</h1>
+  <label for="scientificNumber">Enter a scientific number:</label>
+  <input type="text" id="scientificNumber" placeholder="Enter a Scientific Number">
+  <button onclick="acceptScientificNumber()">Accept</button>
+  <p id="result"></p>
+</div>
+<div class="footer">
+  <div class="footer-content">
+    <p>Dibuat oleh:</p>
+    <p>David Kalwi Manullang (221011060107)</p>
+    <p>Prodi Sistem Informasi</p>
+    <p>Universitas Sam Ratulangi</p>
+  </div>
+</div>
+
+<script>
+function acceptScientificNumber() {
+      var input = document.getElementById("scientificNumber").value;
+      var number = parseFloat(input);
+      if (!isNaN(number)) {
+        document.getElementById("result").innerText = "Accepted: " + number.toExponential();
+        document.getElementById("result").style.color = "blue"; // Set warna teks menjadi biru
+      } else {
+        document.getElementById("result").innerText = "Invalid input. Please enter a valid scientific number.";
+        document.getElementById("result").style.color = "red"; // Set warna teks menjadi merah
+        
+      }
+}
+</script>
+</body>
+</html>
